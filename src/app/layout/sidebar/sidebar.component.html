@@ -1,0 +1,221 @@
+<nav class="sidebar">
+    <div class="sidebar-header">
+        <a href="#" class="noble-ui-logo d-block mt-3"></a>
+        <div class="sidebar-toggler not-active" (click)="toggleSidebar()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="sidebar-body">
+        <ul class="nav">
+            <li class="nav-item nav-category">Main</li>
+            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                <a routerLink="/dashboard" class="nav-link">
+                    <i class="link-icon" data-feather="box"></i>
+                    <span class="link-title">Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item nav-category">Menu</li>
+            <li class="nav-item" routerLinkActive="active">
+                <a routerLink="/user" class="nav-link">
+                    <i class="link-icon mdi mdi-account-plus"></i>
+                    <span class="link-title">Usuarios</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/roles" class="nav-link">
+                    <i class="link-icon mdi mdi-account-key"></i>
+                    <span class="link-title">Roles</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" routerLink="/mantenimiento" role="button"
+                    aria-expanded="false" aria-controls="mantenimiento">
+                    <i class="link-icon" data-feather="settings"></i>
+                    <span class="link-title">Mantenimiento</span>
+                    <i class="link-arrow" data-feather="chevron-down"></i>
+                </a>
+                <div class="collapse" id="mantenimiento">
+                    <ul class="nav sub-menu">
+                        <li class="nav-item">
+                            <a routerLink="/mantenimiento" class="nav-link">Notaria</a>
+                        </li>
+                        <li class="nav-item">
+                            <a routerLink="/mantenimiento" class=" nav-link">Tecnico</a>
+                        </li>
+                        <li class="nav-item">
+                            <a routerLink="/mantenimiento" class=" nav-link">Supervisor</a>
+                        </li>
+                        <li class="nav-item">
+                            <a routerLink="/mantenimiento" class=" nav-link">Verificador</a>
+                        </li>
+                        <li class="nav-item">
+                            <a routerLink="/mantenimiento" class=" nav-link">Sectores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a routerLink="/mantenimiento" class=" nav-link">Manzanas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a routerLink="/mantenimiento" class=" nav-link">Habilitacion Urbana</a>
+                        </li>
+                        <li class="nav-item">
+                            <a routerLink="/mantenimiento" class=" nav-link">Vias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a routerLink="/mantenimiento" class=" nav-link">Codigos de Tabla</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#ficha" role="button" aria-expanded="false"
+                    aria-controls="ficha">
+                    <i class="link-icon mdi mdi-clipboard-text"></i>
+                    <span class="link-title">Fichas</span>
+                    <i class="link-arrow" data-feather="chevron-down"></i>
+                </a>
+                <div class="collapse" id="ficha">
+                    <ul class="nav sub-menu">
+                        <li class="nav-item">
+                            <a href="/ficha/createindividual" class="nav-link">Crear Ficha Individual</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/ficha/indexcotitular" class="nav-link">Crear Ficha Cotitularidad</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/ficha/indexeconomica" class="nav-link">Crear Ficha Economica</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/ficha/createbiencomun" class="nav-link">Crear Ficha Bienes Comunes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/ficha/indexbiencultural" class="nav-link">Crear Ficha Bien Cultural</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/ficha/createrural" class="nav-link">Crear Ficha Rural</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="/imagenes/ver" class="nav-link">
+                    <i class="link-icon mdi mdi-file-multiple"></i>
+                    <span class="link-title">Subir Imagen</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#impresion" role="button" aria-expanded="false"
+                    aria-controls="impresion">
+                    <i class="link-icon mdi mdi-clipboard-text"></i>
+                    <span class="link-title">Impresion de Fichas</span>
+                    <i class="link-arrow" data-feather="chevron-down"></i>
+                </a>
+                <div class="collapse" id="impresion">
+                    <ul class="nav sub-menu">
+                        <li class="nav-item">
+                            <a href="/impresion/verficha" class="nav-link">Ficha Individual</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/impresion/verfichacotitular" class="nav-link">Ficha Cotitular</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/impresion/verfichaeconomicas" class="nav-link">Ficha Economicas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/impresion/verfichabc" class="nav-link">Ficha Bien Comun</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/impresion/verfichainformativa" class="nav-link">Hoja Informativa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/impresion/vercertificado" class="nav-link">Certificado Catastral</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/impresion/veradministracion" class="nav-link">Informe Tecnico Catastral</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/impresion/verinformativaeconomica" class="nav-link">Informe Tecnico Catastral
+                                Economico</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/impresion/vercnumeracion" class="nav-link">Certificado de Numeracion</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#reporte" role="button" aria-expanded="false"
+                    aria-controls="reporte">
+                    <i class="link-icon mdi mdi-clipboard-text"></i>
+                    <span class="link-title">Reportes</span>
+                    <i class="link-arrow" data-feather="chevron-down"></i>
+                </a>
+                <div class="collapse" id="reporte">
+                    <ul class="nav sub-menu">
+                        <li class="nav-item">
+                            <a href="/reporte/reportelista" class="nav-link">Reporte Fichas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/reporte/reportetitulares" class="nav-link">Reporte Titulares Sector</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/reporte/reportepersona" class="nav-link">Reporte por titular</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/reporte/reporteusuario" class="nav-link">Reporte por usuario</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/reporte/reportefechas" class="nav-link">Reporte por fechas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/reporte/fichapuerta" class="nav-link">Reporte por puertas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/reporte/fichapredio" class="nav-link">Reporte por predio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/reporte/fichaconstrucciones" class="nav-link">Reporte por construccion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/reporte/fichaantiguedad" class="nav-link">Reporte por Años de antiguedad</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/reporte/ficharegistral" class="nav-link">Reporte por Fichas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/reporte/fichasinscritas" class="nav-link">Reporte Fichas Inscritas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/reporte/fichasupnoinscritas" class="nav-link">Reporte Fichas No Inscritas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/reporte/ultimasfichas" class="nav-link">Ultimas Fichas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/reporte/fichasporpersona" class="nav-link">Fichas por Persona</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/reporte/fichasegundatitular" class="nav-link">Fichas Segundo Titular</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/reporte/fichadireccion" class="nav-link">Reporte por Direccion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/reporte/fichadireccion" class="nav-link">Reporte por Direccion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/reporte/fichapdf" class="nav-link">Ficha Pdf</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="/vermapa" class="nav-link">
+                    <i class="link-icon mdi mdi-map"></i>
+                    <span class="link-title">Ver Mapa</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

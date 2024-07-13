@@ -1,0 +1,283 @@
+.sidebar {
+    width: 240px;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: width .1s ease, margin .1s ease-in-out;
+    z-index: 999;
+}
+
+.sidebar .sidebar-header {
+    background: #fff;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    border-right: 1px solid #b2b4b7;
+    z-index: 999;
+    width: 240px;
+    transition: width .1s ease;
+}
+
+.sidebar-open .sidebar .sidebar-header,
+.sidebar .sidebar-header {
+    border-bottom: 1px solid #b2b4b7;
+}
+
+.sidebar .sidebar-header .sidebar-brand {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .5s ease;
+    font-weight: 700;
+    font-size: 25px;
+    color: #a6a6a6;
+}
+
+.sidebar .sidebar-header .sidebar-brand span {
+    color: #7BC6DE;
+    font-weight: 300;
+}
+
+.sidebar .sidebar-header .sidebar-toggler {
+    cursor: pointer;
+    width: 18px;
+}
+
+.sidebar .sidebar-header .sidebar-toggler span {
+    display: block;
+    width: 100%;
+    border-radius: 3px;
+    height: 2px;
+    background: #046382;
+    transition: all .3s;
+    position: relative;
+}
+
+.sidebar .sidebar-header .sidebar-toggler span+span {
+    margin-top: 4px;
+}
+
+.sidebar .sidebar-header .sidebar-toggler.active span:first-child {
+    -webkit-animation: top .6s ease forwards;
+    animation: top .6s ease forwards;
+}
+
+.sidebar .sidebar-header .sidebar-toggler.not-active span:first-child {
+    -webkit-animation: top-2 .6s ease forwards;
+    animation: top-2 .6s ease forwards;
+}
+
+.sidebar .sidebar-header .sidebar-toggler.active span:nth-child(2) {
+    -webkit-animation: scaled .6s ease forwards;
+    animation: scaled .6s ease forwards;
+}
+
+.sidebar .sidebar-header .sidebar-toggler.not-active span:nth-child(2) {
+    -webkit-animation: scaled-2 .6s ease forwards;
+    animation: scaled-2 .6s ease forwards;
+}
+
+.sidebar .sidebar-header .sidebar-toggler.active span:nth-child(3) {
+    -webkit-animation: bottom .6s ease forwards;
+    animation: bottom .6s ease forwards;
+}
+
+.sidebar .sidebar-header .sidebar-toggler.not-active span:nth-child(3) {
+    -webkit-animation: bottom-2 .6s ease forwards;
+    animation: bottom-2 .6s ease forwards;
+}
+
+.sidebar .sidebar-body {
+    max-height: calc(100% - 60px);
+    position: relative;
+    border-right: 1px solid #b2b4b7;
+    height: 100%;
+    box-shadow: 0 8px 10px 0 rgba(183, 192, 206, .2);
+    background: #fff;
+}
+
+.sidebar .sidebar-body .nav {
+    display: flex;
+    flex-direction: column;
+    padding: 25px 25px 50px;
+}
+
+.sidebar .sidebar-body .nav .nav-item {
+    position: relative;
+}
+
+.sidebar .sidebar-body .nav .nav-item .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    height: 32px;
+    white-space: nowrap;
+    color: #000;
+}
+
+.sidebar .sidebar-body .nav .nav-item .nav-link .link-icon {
+    width: 16px;
+    height: 16px;
+    fill: rgba(233, 236, 239, .21);
+    position: absolute;
+    color: inherit;
+}
+
+.sidebar .sidebar-body .nav .nav-item .nav-link .link-title {
+    margin-left: 30px;
+    font-size: 14px;
+    transition: all .2s ease-in-out;
+}
+
+.sidebar .sidebar-body .nav .nav-item .nav-link .link-arrow {
+    width: 14px;
+    height: 14px;
+    margin-left: auto;
+    transition: all .3s ease-in-out;
+    color: inherit;
+}
+
+.sidebar .sidebar-body .nav .nav-item .nav-link .link-arrow,
+.sidebar .sidebar-body .nav .nav-item .nav-link .link-icon,
+.sidebar .sidebar-body .nav .nav-item .nav-link .link-title {
+    transition: all .3s ease;
+}
+
+.sidebar .sidebar-body .nav .nav-item .nav-link[aria-expanded=true] {
+    color: #7BC6DE;
+}
+
+.sidebar .sidebar-body .nav .nav-item .nav-link[aria-expanded=true] .link-arrow {
+    transform: rotate(180deg);
+}
+
+.sidebar .sidebar-body .nav .nav-item.nav-category {
+    color: #046382;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: .5px;
+    margin-bottom: 5px;
+    height: 15px;
+}
+
+.sidebar .sidebar-body .nav .nav-item.nav-category:not(:first-child) {
+    margin-top: 20px;
+}
+
+.sidebar .sidebar-body .nav .nav-item:hover .nav-link {
+    color: #7BC6DE;
+}
+
+.sidebar .sidebar-body .nav .nav-item:hover .nav-link .link-title {
+    margin-left: 31px;
+}
+
+.sidebar .sidebar-body .nav .nav-item:hover .nav-link .link-icon {
+    color: #7BC6DE;
+    fill: rgba(239, 243, 255, .5);
+}
+
+.sidebar .sidebar-body .nav .nav-item.active .nav-link {
+    color: #7BC6DE;
+}
+
+.sidebar .sidebar-body .nav .nav-item.active .nav-link:before {
+    content: "";
+    width: 3px;
+    height: 26px;
+    background: #7BC6DE;
+    position: absolute;
+    left: -25px;
+}
+
+.sidebar .sidebar-body .nav .nav-item.active .nav-link .link-icon {
+    fill: rgba(239, 243, 255, .5);
+    color: #7BC6DE;
+}
+
+.sidebar .sidebar-body .nav.sub-menu {
+    padding: 0 0 15px 33px;
+}
+
+.sidebar .sidebar-body .nav.sub-menu .nav-item {
+    position: relative;
+}
+
+.sidebar .sidebar-body .nav.sub-menu .nav-item .nav-link {
+    height: 25px;
+    color: #000;
+    font-size: 13px;
+    transition: all .3s ease-in-out;
+}
+
+.sidebar .sidebar-body .nav.sub-menu .nav-item .nav-link:before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid #aeb9c4;
+    position: absolute;
+    left: -29px;
+    top: 10px;
+    transition: all .4s ease-in-out;
+}
+
+.sidebar .sidebar-body .nav.sub-menu .nav-item .nav-link.active {
+    color: #7BC6DE;
+}
+
+.sidebar .sidebar-body .nav.sub-menu .nav-item .nav-link.active:before {
+    border: 1px solid #7BC6DE;
+    background: #7BC6DE;
+}
+
+.sidebar .sidebar-body .nav.sub-menu .nav-item:hover .nav-link {
+    color: #7BC6DE;
+    margin-left: 3px;
+}
+
+.sidebar .sidebar-body .nav.sub-menu .nav-item:hover .nav-link:before {
+    border: 1px solid #046382;
+    background: #046382;
+}
+
+.sidebar-dark .sidebar .sidebar-header .sidebar-toggler span {
+    background: #046382;
+}
+
+.settings-sidebar .sidebar-body .settings-sidebar-toggler {
+    position: absolute;
+    left: -44px;
+    top: 0;
+    padding: 12px;
+    border-radius: 4px 0 0 4px;
+    background: #fff;
+    box-shadow: -3px 0 10px 0 rgba(183, 192, 206, .2);
+}
+
+.settings-sidebar .sidebar-body .settings-sidebar-toggler svg {
+    width: 20px;
+    height: 20px;
+    color: #046382;
+}
+
+@media (max-width:991px) {
+
+    .settings-open .main-wrapper:before,
+    .sidebar-open .main-wrapper:before {
+        content: "";
+        width: 100vw;
+        background: rgba(0, 0, 0, .3);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 99;
+        transition: all 3s ease;
+        z-index: 980;
+    }
+}
