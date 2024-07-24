@@ -1,1 +1,1542 @@
-<p>fichas works!</p>
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <h3 class="mb-4 h3">Ficha Catastral Urbana Individual</h3>
+                    <h4 class="mb-4">DATOS GENERALES</h4>
+                    <form [formGroup]="fichaForm" (ngSubmit)="onSubmit()">
+                        <div class="row form-group">
+                            <div class="col-md-3">
+                                <p-floatLabel>
+                                    <input id="numeficha" type="text" pInputText class="w-100"
+                                        formControlName="numeficha" autocomplete="off" />
+                                    <label for="numeficha"><span class="hidden cube-fichas"></span> Numero de
+                                        ficha</label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-4">
+                                <p-floatLabel class="div-juntos">
+                                    <input id="nume_ficha_lote" type="text" pInputText class="w-50"
+                                        formControlName="nume_ficha_lote" autocomplete="off" />
+                                    <input id="nume_ficha_lote2" type="text" pInputText class="w-50"
+                                        formControlName="nume_ficha_lote2" autocomplete="off" />
+                                    <label for="nume_ficha_lote"><span class="hidden cube-fichas"></span> Número de
+                                        fichas por lote</label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-5">
+                                <p-floatLabel>
+                                    <input id="cuc" type="text" pInputText class="w-100" formControlName="cuc"
+                                        autocomplete="off" />
+                                    <label for="cuc"><span class="cube-fichas">1</span> Código único catastral -
+                                        CUC</label>
+                                </p-floatLabel>
+                            </div>
+                        </div>
+
+                        <div class="row form-group pt-4">
+                            <label class="color-secondary" for="cuc"><span class="cube-fichas">1</span> Código único
+                                catastral - CUC</label>
+                            <div class="row form-group py-4 d-flex align-items-center">
+                                <div class="col-md-3 row">
+                                    <div class="col-md-4 mb-3">
+                                        <div class="flex flex-column gap-2">
+                                            <label class="text-center tx-14" for="dpto">Dep.</label>
+                                            <input id="dpto" type="text" pInputText class="w-100" formControlName="dpto"
+                                                autocomplete="off" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="flex flex-column gap-2">
+                                            <label class="text-center tx-14" for="prov">Prov.</label>
+                                            <input id="prov" type="text" pInputText class="w-100" formControlName="prov"
+                                                autocomplete="off" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="flex flex-column gap-2">
+                                            <label class="text-center tx-14" for="dist">Dist.</label>
+                                            <input id="dist" type="text" pInputText class="w-100" formControlName="dist"
+                                                autocomplete="off" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 row">
+                                    <div class="col-md-6 mb-3">
+                                        <div class="flex flex-column gap-2">
+                                            <label class="text-center tx-14" for="sector">Sector</label>
+                                            <p-dropdown [options]="sectores" optionLabel="name" placeholder="Sector"
+                                                formControlName="sector"></p-dropdown>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="flex flex-column gap-2">
+                                            <label class="text-center tx-14" for="manzanas">Manzanas</label>
+                                            <input id="manzanas" type="text" pInputText class="w-100"
+                                                formControlName="manzanas" autocomplete="off" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-1 mb-3">
+                                    <div class="flex flex-column gap-2">
+                                        <label class="text-center tx-14" for="lote">LOTE</label>
+                                        <input id="lote" type="text" pInputText class="w-100" formControlName="lote"
+                                            autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="col-md-1 mb-3">
+                                    <div class="flex flex-column gap-2">
+                                        <label class="text-center tx-14" for="edifica">EDIFICA</label>
+                                        <input id="edifica" type="text" pInputText class="w-100"
+                                            formControlName="edifica" autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="col-md-1 mb-3">
+                                    <div class="flex flex-column gap-2">
+                                        <label class="text-center tx-14" for="entrada">ENTRADA</label>
+                                        <input id="entrada" type="text" pInputText class="w-100"
+                                            formControlName="entrada" autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="col-md-1 mb-3">
+                                    <div class="flex flex-column gap-2">
+                                        <label class="text-center tx-14" for="piso">PISO</label>
+                                        <input id="piso" type="text" pInputText class="w-100" formControlName="piso"
+                                            autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="col-md-1 mb-3">
+                                    <div class="flex flex-column gap-2">
+                                        <label class="text-center tx-14" for="unidad">UNIDAD</label>
+                                        <input id="unidad" type="text" pInputText class="w-100" formControlName="unidad"
+                                            autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="col-md-1 mb-3">
+                                    <div class="flex flex-column gap-2">
+                                        <label class="text-center tx-14" for="dc">DC</label>
+                                        <input id="dc" type="number" pInputText class="w-100" formControlName="dc"
+                                            autocomplete="off" readonly />
+                                    </div>
+                                </div>
+                                <p-button type="button" icon="expand_more" iconPos="right"
+                                    class="btn-icon bg-preset-primary rounded">
+                                    <mat-icon class="" inline>dialpad</mat-icon>
+                                </p-button>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-6">
+                                <p-floatLabel>
+                                    <input id="codi_cont_rentas" type="text" pInputText class="w-100"
+                                        formControlName="codi_cont_rentas" autocomplete="off" />
+                                    <label for="codi_cont_rentas"><span class="cube-fichas">2</span> Código
+                                        contribuyente de rentas </label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-6">
+                                <p-floatLabel>
+                                    <input id="codi_pred_rentas" type="text" pInputText class="w-100"
+                                        formControlName="codi_pred_rentas" autocomplete="off" />
+                                    <label for="codi_pred_rentas"><span class="cube-fichas">3</span> Código predial de
+                                        rentas </label>
+                                </p-floatLabel>
+                            </div>
+                        </div>
+                        <div class="row py-4">
+                            <h4 class="mb-4"> UBICACION DEL PREDIO CATASTRAL</h4>
+                            <div class="col-md-12 mb-2">
+                                <div class="table-responsive d-inline">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <label class="color-secondary">
+                                                        <span class="cube-fichas">5</span>
+                                                        Código de via
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary">
+                                                        <span class="cube-fichas">6</span>
+                                                        TIPO DE VIA
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary">
+                                                        <span class="cube-fichas">7</span>
+                                                        NOMBRE DE VIA
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary">
+                                                        <span class="cube-fichas">8</span>
+                                                        TIPO DE PUERTA
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary">
+                                                        <span class="cube-fichas">9</span>
+                                                        N° MUNICIPAL
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary">
+                                                        <span class="cube-fichas">10</span>
+                                                        COND. NUMER.
+                                                    </label>
+                                                </th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody formArrayName="ubicaciones">
+                                            <tr *ngFor="let item of ubicaciones.controls; let i = index"
+                                                [formGroupName]="i">
+                                                <td>
+                                                    <p-dropdown [options]="vias" formControlName="viaId"
+                                                        placeholder="Seleccione" optionLabel="name"></p-dropdown>
+                                                </td>
+                                                <td>{{ item.get('tipoViatipo')?.value }}</td>
+                                                <td>{{ item.get('tipoVianombre')?.value }}</td>
+                                                <td>
+                                                    <p-dropdown [options]="tipoPuertas" formControlName="tipoPuerta"
+                                                        placeholder="Seleccione" optionLabel="name"></p-dropdown>
+                                                </td>
+                                                <td>
+                                                    <input pInputText type="text" formControlName="numeMuni">
+                                                </td>
+                                                <td>
+                                                    <p-dropdown [options]="condNumes" formControlName="condNume"
+                                                        placeholder="Seleccione" optionLabel="name"></p-dropdown>
+                                                </td>
+                                                <td>
+                                                    <button *ngIf="i === ubicaciones.length - 1" type="button"
+                                                        class="btn btn-success btn-icon"
+                                                        (click)="addUbicacion()">+</button>
+                                                    <button *ngIf="i < ubicaciones.length - 1" type="button"
+                                                        class="btn btn-danger btn-icon"
+                                                        (click)="removeUbicacion(i)">-</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group py-2">
+                            <div class="col-md-4">
+                                <p-floatLabel>
+                                    <p-dropdown [options]="tipoEdificacionOptions" formControlName="tipoEdificacion"
+                                        placeholder="Seleccione" optionLabel="name"></p-dropdown>
+                                    <label for="tipoEdificacion"><span class="cube-fichas">11</span> Tipo de
+                                        edificación</label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-4">
+                                <p-floatLabel>
+                                    <p-dropdown [options]="tipoInteriorOptions" formControlName="tipoInterior"
+                                        placeholder="Seleccione" optionLabel="name"></p-dropdown>
+                                    <label for="tipoInterior"><span class="cube-fichas">12</span> Tipo de
+                                        edificación</label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-4">
+                                <p-floatLabel>
+                                    <input id="numeInterior" type="text" pInputText formControlName="numeInterior"
+                                        autocomplete="off" />
+                                    <label for="numeInterior"><span class="cube-fichas">13</span> Numero de
+                                        interior</label>
+                                </p-floatLabel>
+                            </div>
+                        </div>
+
+                        <div class="row form-group py-2 pt-4">
+                            <div class="col-md-2">
+                                <div class="mb-3">
+                                    <p-floatLabel>
+                                        <p-dropdown [options]="codigoUrbanoOptions" formControlName="codigoUrbano"
+                                            placeholder="Seleccione" optionLabel="name"></p-dropdown>
+                                        <label for="codigoUrbano"><span class="cube-fichas">14</span> Código
+                                            Urbano</label>
+                                    </p-floatLabel>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <p-floatLabel>
+                                    <input id="nombHabUrba" type="text" pInputText formControlName="nombHabUrba"
+                                        autocomplete="off" />
+                                    <label for="nombHabUrba"><span class="cube-fichas">15</span> Nombre de la
+                                        habilitación urbana</label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-2">
+                                <p-floatLabel>
+                                    <input id="zonaDist" type="text" pInputText formControlName="zonaDist"
+                                        autocomplete="off" />
+                                    <label for="zonaDist"><span class="cube-fichas">16</span> Zona</label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-2">
+                                <p-floatLabel>
+                                    <input id="mznaDist" type="text" pInputText formControlName="mznaDist"
+                                        autocomplete="off" />
+                                    <label for="mznaDist"><span class="cube-fichas">17</span> Manzana</label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-1">
+                                <p-floatLabel>
+                                    <input id="loteDist" type="text" pInputText formControlName="loteDist"
+                                        autocomplete="off" />
+                                    <label for="loteDist"><span class="cube-fichas">18</span> Lote</label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-2">
+                                <p-floatLabel>
+                                    <input id="subLoteDist" type="text" pInputText formControlName="subLoteDist"
+                                        autocomplete="off" />
+                                    <label for="subLoteDist"><span class="cube-fichas">19</span> Sub-lote</label>
+                                </p-floatLabel>
+                            </div>
+                        </div>
+
+                        <!-- Row -->
+                        <div class="row form-group py-2">
+                            <h4 class=""> IDENTIFICACIÓN DEL TITULAR CATASTRAL</h4>
+                            <div class="col-md-4 py-4">
+                                <p-floatLabel>
+                                    <p-dropdown [options]="tipo_persona" formControlName="tipoPersona"
+                                        placeholder="Seleccione" optionLabel="name"></p-dropdown>
+                                    <label for="tipoPersona"><span class="cube-fichas">20</span> Tipo de titular</label>
+                                </p-floatLabel>
+                            </div>
+                        </div>
+
+                        <!-- Col -->
+                        <div class="row form-group">
+                            <div class="col-md-4">
+                                <p-floatLabel>
+                                    <p-dropdown [options]="estadoCivilOptions" formControlName="estadoCivil"
+                                        placeholder="Seleccione" optionLabel="name"></p-dropdown>
+                                    <label for="estadoCivil"><span class="cube-fichas">21</span> Estado
+                                        civil</label>
+                                </p-floatLabel>
+                            </div>
+                            <!-- Col -->
+                            <div class="col-md-4">
+                                <p-floatLabel>
+                                    <p-dropdown [options]="tipoDocOptions" formControlName="tipoDoc1"
+                                        placeholder="Seleccione" optionLabel="name"></p-dropdown>
+                                    <label for="tipoDoc1"><span class="cube-fichas">22</span> Tipo doc.
+                                        identidad</label>
+                                </p-floatLabel>
+                            </div>
+                            <!-- Col -->
+                            <div class="col-md-4">
+                                <p-floatLabel>
+                                    <input id="numeDoc1" type="text" pInputText formControlName="numeDoc1"
+                                        autocomplete="off" />
+                                    <label for="numeDoc1"><span class="cube-fichas">23</span> N° DOC.</label>
+                                </p-floatLabel>
+                            </div>
+                        </div>
+                        <!-- Row -->
+                        <div class="row form-group py-4">
+                            <div class="col-md-4">
+                                <p-floatLabel>
+                                    <input id="nombres1" type="text" pInputText formControlName="nombres1"
+                                        autocomplete="off" />
+                                    <label for="nombres1"><span class="cube-fichas">24</span> Nombres</label>
+                                </p-floatLabel>
+                            </div>
+                            <!-- Col -->
+                            <div class="col-md-4">
+                                <p-floatLabel>
+                                    <input id="apePaterno1" type="text" pInputText formControlName="apePaterno1"
+                                        autocomplete="off" />
+                                    <label for="apePaterno1"><span class="cube-fichas">25</span> Apellido
+                                        paterno</label>
+                                </p-floatLabel>
+                            </div>
+                            <!-- Col -->
+                            <div class="col-md-4">
+                                <p-floatLabel>
+                                    <input id="apeMaterno1" type="text" pInputText formControlName="apeMaterno1"
+                                        autocomplete="off" />
+                                    <label for="apeMaterno1"><span class="cube-fichas">26</span> Apellido
+                                        materno</label>
+                                </p-floatLabel>
+                            </div>
+                        </div>
+                        <!-- Row -->
+                        <div class="row form-group">
+                            <div class="col-md-6">
+                                <p-floatLabel>
+                                    <p-dropdown [options]="tipoDocOptions" formControlName="tipoDoc2"
+                                        placeholder="Seleccione" optionLabel="name"></p-dropdown>
+                                    <label for="tipoDoc2"><span class="cube-fichas">22</span> Tipo doc.
+                                        identidad</label>
+                                </p-floatLabel>
+                            </div>
+                            <!-- Col -->
+                            <div class="col-md-6">
+                                <p-floatLabel>
+                                    <input id="numeDoc2" type="text" pInputText formControlName="numeDoc2"
+                                        autocomplete="off" />
+                                    <label for="numeDoc2"><span class="cube-fichas">23</span> N° Doc.</label>
+                                </p-floatLabel>
+                            </div>
+                        </div>
+                        <!-- Row -->
+                        <div class="row form-group py-4">
+                            <div class="col-md-4">
+                                <p-floatLabel>
+                                    <input id="nombres2" type="text" pInputText formControlName="nombres2"
+                                        autocomplete="off" />
+                                    <label for="nombres2"><span class="cube-fichas">24</span> Nombres</label>
+                                </p-floatLabel>
+                            </div>
+                            <!-- Col -->
+                            <div class="col-md-4">
+                                <p-floatLabel>
+                                    <input id="apePaterno2" type="text" pInputText formControlName="apePaterno2"
+                                        autocomplete="off" />
+                                    <label for="apePaterno2"><span class="cube-fichas">25</span> Apellido
+                                        paterno</label>
+                                </p-floatLabel>
+                            </div>
+                            <!-- Col -->
+                            <div class="col-md-4">
+                                <p-floatLabel>
+                                    <input id="apeMaterno2" type="text" pInputText formControlName="apeMaterno2"
+                                        autocomplete="off" />
+                                    <label for="apeMaterno2"><span class="cube-fichas">26</span> Apellido
+                                        materno</label>
+                                </p-floatLabel>
+                            </div>
+                        </div>
+                        <!-- Row -->
+                        <div class="row form-group">
+                            <div class="col-md-3">
+                                <p-floatLabel>
+                                    <input id="numeDoc3" type="text" pInputText formControlName="numeDoc3"
+                                        autocomplete="off" />
+                                    <label for="numeDoc3"><span class="cube-fichas">27</span> Nº de R.U.C.</label>
+                                </p-floatLabel>
+                            </div>
+                            <!-- Col -->
+                            <div class="col-md-6">
+                                <p-floatLabel>
+                                    <input id="razonSocial" type="text" pInputText formControlName="razonSocial"
+                                        autocomplete="off" />
+                                    <label for="razonSocial"><span class="cube-fichas">28</span> Razon
+                                        social</label>
+                                </p-floatLabel>
+                            </div>
+                            <!-- Col -->
+                            <div class="col-md-3">
+                                <p-floatLabel>
+                                    <p-dropdown [options]="tipoPersonaJuridicaOptions"
+                                        formControlName="tipoPersonaJuridica" placeholder="Seleccione"
+                                        optionLabel="name"></p-dropdown>
+                                    <label for="tipoPersonaJuridica"><span class="cube-fichas">29</span> Tipo
+                                        persona juridica</label>
+                                </p-floatLabel>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <h4 class="mb-4">DOMICILIO FISCAL DEL TITULAR CATASTRAL</h4>
+                        </div>
+                        <div class="row form-group py-2 pb-4">
+                            <div class="col-md-3">
+                                <p-floatLabel>
+                                    <p-dropdown [options]="ubicacionOptions" formControlName="ubicacion_domicilio"
+                                        optionLabel="name"></p-dropdown>
+                                    <label for="ubicacion"><span class="cube-fichas">30</span> Ubicacion</label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-3">
+                                <p-floatLabel>
+                                    <p-dropdown [options]="departamentoOptions" formControlName="departamento_domicilio"
+                                        optionLabel="name"></p-dropdown>
+                                    <label for="departamento"><span class="cube-fichas">31</span> Departamento</label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-3">
+                                <p-floatLabel>
+                                    <p-dropdown [options]="provinciaOptions" formControlName="provincia_domicilio"
+                                        optionLabel="name"></p-dropdown>
+                                    <label for="provincia"><span class="cube-fichas">32</span> Provincia</label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-3">
+                                <p-floatLabel>
+                                    <p-dropdown [options]="distritoOptions" formControlName="distrito_domicilio"
+                                        optionLabel="name"></p-dropdown>
+                                    <label for="distrito"><span class="cube-fichas">33</span> Distrito</label>
+                                </p-floatLabel>
+                            </div>
+                        </div>
+                        <div class="row form-group py-2" id="ubicacion">
+                            <div class="col-md-2">
+                                <p-floatLabel>
+                                    <input id="codigoVia" type="text" class="w-100" pInputText
+                                        formControlName="codigoVia_domicilio" optionLabel="name" />
+                                    <label for="codigoVia"><span class="cube-fichas">5</span> Código de Via</label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-2">
+                                <p-floatLabel>
+                                    <p-dropdown [options]="tipoViaOptions"
+                                        formControlName="tipoVia_domicilio"></p-dropdown>
+                                    <label for="tipoVia"><span class="cube-fichas">6</span> Tipo de Via</label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-4">
+                                <p-floatLabel>
+                                    <input id="nombreVia" type="text" class="w-100" pInputText
+                                        formControlName="nombreVia_domicilio" />
+                                    <label for="nombreVia"><span class="cube-fichas">7</span> Nombre de Via</label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-2">
+                                <p-floatLabel>
+                                    <input id="nMunicipal" type="text" class="w-100" pInputText
+                                        formControlName="nMunicipal_domicilio" />
+                                    <label for="nMunicipal"><span class="cube-fichas">9</span> N° Municipal</label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-2">
+                                <p-floatLabel>
+                                    <input id="nInterior" type="text" class="w-100" pInputText
+                                        formControlName="nInterior_domicilio" />
+                                    <label for="nInterior"><span class="cube-fichas">13</span> N. Interior</label>
+                                </p-floatLabel>
+                            </div>
+                        </div>
+
+                        <div class="row form-group py-4">
+                            <div class="col-md-2">
+                                <p-floatLabel>
+                                    <input id="codigoHurbano" type="text" class="w-100" pInputText
+                                        formControlName="codigoHurbano_domicilio" />
+                                    <label for="codigoHurbano"><span class="cube-fichas">14</span> Código
+                                        Urbano</label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-3">
+                                <p-floatLabel>
+                                    <input id="nombreHhurbana" type="text" class="w-100" pInputText
+                                        formControlName="nombreHhurbana_domicilio" />
+                                    <label for="nombreHhurbana"><span class="cube-fichas">15</span> Nombre de la
+                                        Habilitación Urbana</label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-3">
+                                <p-floatLabel>
+                                    <input id="zona" type="text" class="w-100" pInputText
+                                        formControlName="zona_domicilio" />
+                                    <label for="zona"><span class="cube-fichas">16</span> Zona/Sector/Etapa</label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-1">
+                                <p-floatLabel>
+                                    <input id="manzana" type="text" class="w-100" pInputText
+                                        formControlName="manzana_domicilio" />
+                                    <label for="manzana"><span class="cube-fichas">17</span> Mzna</label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-1">
+                                <p-floatLabel>
+                                    <input id="lote" type="text" class="w-100" pInputText
+                                        formControlName="lote_domicilio" />
+                                    <label for="lote"><span class="cube-fichas">18</span> Lote</label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-2">
+                                <p-floatLabel>
+                                    <input id="subLote" type="text" class="w-100" pInputText
+                                        formControlName="subLote_domicilio" />
+                                    <label for="subLote"><span class="cube-fichas">19</span> Sub-Lote</label>
+                                </p-floatLabel>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-4">
+                                <p-floatLabel>
+                                    <input id="telefonoDomicilio" type="text" class="w-100" pInputText
+                                        formControlName="telefonoDomicilio" />
+                                    <label for="telefonoDomicilio"><span class="cube-fichas">34</span> Telefono</label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-4">
+                                <p-floatLabel>
+                                    <input id="anexoDomicilio" type="text" class="w-100" pInputText
+                                        formControlName="anexoDomicilio" />
+                                    <label for="anexoDomicilio"><span class="cube-fichas">35</span> Anexo</label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-4">
+                                <p-floatLabel>
+                                    <input id="emailDomicilio" type="text" class="w-100" pInputText
+                                        formControlName="emailDomicilio" />
+                                    <label for="emailDomicilio"><span class="cube-fichas">36</span> Correo
+                                        Electronico</label>
+                                </p-floatLabel>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <h4 class="mb-4 py-2">Caracteristicas de la Titularidad</h4>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <p-floatLabel>
+                                    <p-dropdown [options]="condTitularOptions" optionLabel="name"
+                                        formControlName="condicionTitular"></p-dropdown>
+                                    <label for="condicionTitular"><span class="cube-fichas">37</span> Condicion del
+                                        Titular</label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-4">
+                                <p-floatLabel>
+                                    <p-dropdown [options]="formAdquisicionOptions" optionLabel="name"
+                                        formControlName="formaAdquisicion"></p-dropdown>
+                                    <label for="formaAdquisicion"><span class="cube-fichas">38</span> Forma de
+                                        Adquisicion</label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-4">
+                                <p-floatLabel>
+                                    <p-calendar formControlName="fechaAdquisicion" [readonlyInput]="true"
+                                        class="w-100"></p-calendar>
+                                    <label for="fechaAdquisicion"><span class="cube-fichas">39</span> Fecha de
+                                        Adquisicion</label>
+                                </p-floatLabel>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <h4 class="mb-3 py-2">Descripcion del Predio</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p-floatLabel>
+                                    <p-dropdown [options]="clasificacionOptions" optionLabel="name"
+                                        formControlName="clasificacionPredio"></p-dropdown>
+                                    <label for="clasificacionPredio"><span class="cube-fichas">40</span>
+                                        Clasificacion del Predio</label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-6">
+                                <p-floatLabel>
+                                    <p-dropdown [options]="predioCatastralOptions" optionLabel="name"
+                                        formControlName="predioCatastral"></p-dropdown>
+                                    <label for="predioCatastral"><span class="cube-fichas">41</span> Predio
+                                        Catastral en</label>
+                                </p-floatLabel>
+                            </div>
+                        </div>
+
+
+                        <div class="row form-group py-4">
+                            <div class="col-md-8">
+                                <p-floatLabel>
+                                    <p-dropdown [options]="codigoUsoOptions" optionLabel="name"
+                                        formControlName="codigoUso"></p-dropdown>
+                                    <label for="codigoUso"><span class="cube-fichas">42</span> Codigo de Uso</label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-4">
+                                <p-floatLabel>
+                                    <p-dropdown [options]="zonificacionOptions" optionLabel="name"
+                                        formControlName="zonificacion"></p-dropdown>
+                                    <label for="zonificacion"><span class="cube-fichas">59</span>
+                                        Zonificacion</label>
+                                </p-floatLabel>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-6">
+                                <p-floatLabel>
+                                    <input type="text" pInputText formControlName="areaTitulo" class="w-100">
+                                    <label for="areaTitulo"><span class="cube-fichas">45</span> Area de Terreno
+                                        Adquirido (m²)</label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-6">
+                                <p-floatLabel>
+                                    <input type="text" pInputText formControlName="areaVerificada" class="w-100">
+                                    <label for="areaVerificada"><span class="cube-fichas">46</span> Area de Terreno
+                                        Verificada (m²)</label>
+                                </p-floatLabel>
+                            </div>
+                        </div>
+
+                        <div class="row form-group py-4">
+                            <div class="col-md-4 d-flex flex-column gap-4 justify-content-between">
+                                <div class=" divcuadroceleste">
+                                    <label class="form-label d-inline-flex"> Linderos de Lote (ML)</label>
+                                </div>
+                                <div class=" divcuadroceleste">
+                                    <label class="form-label d-inline-flex"> Frente</label>
+                                </div>
+                                <div class=" divcuadroceleste">
+                                    <label class="form-label d-inline-flex"> Derecha</label>
+                                </div>
+                                <div class=" divcuadroceleste">
+                                    <label class="form-label d-inline-flex"> Izquierda</label>
+                                </div>
+                                <div class=" divcuadroceleste">
+                                    <label class="form-label d-inline-flex"> Fondo</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4 d-flex flex-column gap-4">
+                                <div class="">
+                                    <label class="form-label d-inline-flex">
+                                        <span class="cube-fichas">47</span> Medida en Campo
+                                    </label>
+                                </div>
+                                <div class="">
+                                    <input type="text" pInputText formControlName="frenteCampo" class="w-100">
+                                </div>
+                                <div class="">
+                                    <input type="text" pInputText formControlName="derechaCampo" class="w-100">
+                                </div>
+                                <div class="">
+                                    <input type="text" pInputText formControlName="izquierdaCampo" class="w-100">
+                                </div>
+                                <div class="">
+                                    <input type="text" pInputText formControlName="fondoCampo" class="w-100">
+                                </div>
+                            </div>
+                            <div class="col-md-4 d-flex flex-column gap-4">
+                                <div class="">
+                                    <label class="form-label d-inline-flex">
+                                        <span class="cube-fichas">48</span> Colindancias en Campo
+                                    </label>
+                                </div>
+                                <div class="">
+                                    <input type="text" pInputText formControlName="frenteColindaCampo" class="w-100">
+                                </div>
+                                <div class="">
+                                    <input type="text" pInputText formControlName="derechaColindaCampo" class="w-100">
+                                </div>
+                                <div class="">
+                                    <input type="text" pInputText formControlName="izquierdaColindaCampo" class="w-100">
+                                </div>
+                                <div class="">
+                                    <input type="text" pInputText formControlName="fondoColindaCampo" class="w-100">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <h4 class="mb-4">Servicios que Cuenta el Predio</h4>
+                            <div class="row justify-content-evenly">
+                                <div class="lineatoggle flex-column">
+                                    <div>
+                                        <label class="form-label d-inline-flex">
+                                            <span class="cube-fichas">49</span> Luz
+                                        </label>
+                                    </div>
+                                    <div style="padding-left: 10px;">
+                                        <p-inputSwitch formControlName="luz" tabindex="82"></p-inputSwitch>
+                                    </div>
+                                </div>
+                                <div class="lineatoggle flex-column">
+                                    <div>
+                                        <label class="form-label d-inline-flex">
+                                            <span class="cube-fichas">50</span> Agua
+                                        </label>
+                                    </div>
+                                    <div style="padding-left: 10px;">
+                                        <p-inputSwitch formControlName="agua" tabindex="83"></p-inputSwitch>
+                                    </div>
+                                </div>
+                                <div class="lineatoggle flex-column">
+                                    <div>
+                                        <label class="form-label d-inline-flex">
+                                            <span class="cube-fichas">51</span> Teléfono
+                                        </label>
+                                    </div>
+                                    <div style="padding-left: 10px;">
+                                        <p-inputSwitch formControlName="telefono" tabindex="84"></p-inputSwitch>
+                                    </div>
+                                </div>
+                                <div class="lineatoggle flex-column">
+                                    <div>
+                                        <label class="form-label d-inline-flex">
+                                            <span class="cube-fichas">52</span> Desagüe
+                                        </label>
+                                    </div>
+                                    <div style="padding-left: 10px;">
+                                        <p-inputSwitch formControlName="desague" tabindex="85"></p-inputSwitch>
+                                    </div>
+                                </div>
+                                <div class="lineatoggle flex-column">
+                                    <div>
+                                        <label class="form-label d-inline-flex">
+                                            <span class="cube-fichas">53</span> Gas
+                                        </label>
+                                    </div>
+                                    <div style="padding-left: 10px;">
+                                        <p-inputSwitch formControlName="gas" tabindex="86"></p-inputSwitch>
+                                    </div>
+                                </div>
+                                <div class="lineatoggle flex-column">
+                                    <div>
+                                        <label class="form-label d-inline-flex">
+                                            <span class="cube-fichas">54</span> Internet
+                                        </label>
+                                    </div>
+                                    <div style="padding-left: 10px;">
+                                        <p-inputSwitch formControlName="internet" tabindex="87"></p-inputSwitch>
+                                    </div>
+                                </div>
+                                <div class="lineatoggle flex-column">
+                                    <div>
+                                        <label class="form-label d-inline-flex" for="tvcable" style="width: 250px;">
+                                            <span class="cube-fichas">55</span> Conexión TV por Cable o Cable Satelital
+                                        </label>
+                                    </div>
+                                    <p-inputSwitch id="tvcable" formControlName="tvcable" tabindex="88"></p-inputSwitch>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row py-4">
+                            <h4 class="mb-4">Construcciones</h4>
+                            <div class="col-md-12 mb-2">
+                                <div class="table-responsive d-inline">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <label class="color-secondary d-flex flex-column">
+                                                        <span class="cube-fichas">56</span> Bloque
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary d-flex flex-column">
+                                                        <span class="cube-fichas">56</span> N° Piso
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary d-flex flex-column w-200">
+                                                        <span class="cube-fichas">57</span> Fecha
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary d-flex flex-column">
+                                                        <span class="cube-fichas">58</span> MEP
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary d-flex flex-column">
+                                                        <span class="cube-fichas">59</span> ECS
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary d-flex flex-column">
+                                                        <span class="cube-fichas">60</span> ECC
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary d-flex flex-column">
+                                                        <span class="cube-fichas">61</span> Muros
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary d-flex flex-column">
+                                                        <span class="cube-fichas">62</span> Techos
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary d-flex flex-column">
+                                                        <span class="cube-fichas">63</span> Pisos
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary d-flex flex-column">
+                                                        <span class="cube-fichas">64</span> P. y V.
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary d-flex flex-column">
+                                                        <span class="cube-fichas">65</span> Revest.
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary d-flex flex-column">
+                                                        <span class="cube-fichas">66</span> Baños
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary d-flex flex-column">
+                                                        <span class="cube-fichas">67</span> Inst. E.
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary d-flex flex-column">
+                                                        <span class="cube-fichas">68</span> Área V.
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary d-flex flex-column">
+                                                        <span class="cube-fichas">69</span> UCA
+                                                    </label>
+                                                </th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody formArrayName="construcciones">
+                                            <tr *ngFor="let item of construcciones.controls; let i = index"
+                                                [formGroupName]="i">
+                                                <td>
+                                                    <input pInputText type="text" formControlName="bloque">
+                                                </td>
+                                                <td>
+                                                    <input pInputText type="text" formControlName="numPiso">
+                                                </td>
+                                                <td>
+                                                    <p-calendar formControlName="fecha" view="month" dateFormat="mm/yy"
+                                                        [readonlyInput]="true" class="w-100"></p-calendar>
+                                                </td>
+                                                <td>
+                                                    <p-dropdown [options]="mepOptions" formControlName="mep"
+                                                        optionLabel="name"></p-dropdown>
+                                                </td>
+                                                <td>
+                                                    <p-dropdown [options]="ecsOptions" formControlName="ecs"
+                                                        optionLabel="name"></p-dropdown>
+                                                </td>
+                                                <td>
+                                                    <p-dropdown [options]="eccOptions" formControlName="ecc"
+                                                        optionLabel="name"></p-dropdown>
+                                                </td>
+                                                <td>
+                                                    <input pInputText type="text" formControlName="muros">
+                                                </td>
+                                                <td>
+                                                    <input pInputText type="text" formControlName="techos">
+                                                </td>
+                                                <td>
+                                                    <input pInputText type="text" formControlName="pisos">
+                                                </td>
+                                                <td>
+                                                    <input pInputText type="text" formControlName="puertasVentanas">
+                                                </td>
+                                                <td>
+                                                    <input pInputText type="text" formControlName="revest">
+                                                </td>
+                                                <td>
+                                                    <input pInputText type="text" formControlName="banos">
+                                                </td>
+                                                <td>
+                                                    <input pInputText type="text" formControlName="instElectSanit">
+                                                </td>
+                                                <td>
+                                                    <input pInputText type="text" formControlName="areaVerificada">
+                                                </td>
+                                                <td>
+                                                    <p-dropdown [options]="ucaOptions" formControlName="uca"
+                                                        optionLabel="name"></p-dropdown>
+                                                </td>
+                                                <td>
+                                                    <button *ngIf="i === construcciones.length - 1" type="button"
+                                                        class="btn btn-success btn-icon"
+                                                        (click)="addConstruccion()">+</button>
+                                                    <button *ngIf="i < construcciones.length - 1" type="button"
+                                                        class="btn btn-danger btn-icon"
+                                                        (click)="removeConstruccion(i)">-</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row form-group pt-4">
+                            <label class="color-secondary" for="terrenoLegal"><span class="cube-fichas">70</span> % Del
+                                bien común</label>
+                        </div>
+                        <div class="row form-group py-4 d-flex align-items-center">
+                            <div class="col-md-3 ">
+                                <div class="flex flex-column gap-2">
+                                    <p-floatLabel>
+                                        <input type="text" pInputText formControlName="terrenoLegal" class="w-100"
+                                            id="terrenoLegal">
+                                        <label for="terrenoLegal"><span class="hidden cube-fichas"></span> Terreno
+                                            legal</label>
+                                    </p-floatLabel>
+                                </div>
+                            </div>
+                            <div class="col-md-3 ">
+                                <p-floatLabel>
+                                    <input type="text" pInputText formControlName="construccionLegal" class="w-100"
+                                        id="construccionLegal">
+                                    <label for="construccionLegal"><span class="hidden cube-fichas"></span>
+                                        Construcción legal</label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-3 ">
+                                <p-floatLabel>
+                                    <input type="text" pInputText formControlName="terrenoFisico" class="w-100"
+                                        id="terrenoFisico">
+                                    <label for="terrenoFisico"><span class="hidden cube-fichas"></span> Terreno
+                                        físico</label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-3 ">
+                                <p-floatLabel>
+                                    <input type="text" pInputText formControlName="construccionFisico" class="w-100"
+                                        id="construccionFisico">
+                                    <label for="construccionFisico"><span class="hidden cube-fichas"></span>
+                                        Construcción física</label>
+                                </p-floatLabel>
+                            </div>
+                        </div>
+                        <div class="row py-4">
+                            <h4 class="mb-4"> OBRAS COMPLEMENTARIAS / OTRAS INSTALACIONES</h4>
+                            <div class="col-md-12 mb-2">
+                                <div class="table-responsive d-inline">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <label class="color-secondary d-flex flex-column">
+                                                        <span class="cube-fichas">71</span> CODIGO
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary d-flex flex-column w-300">
+                                                        <span class="cube-fichas">57</span> FECHA
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary d-flex flex-column">
+                                                        <span class="cube-fichas">58</span> MEP
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary d-flex flex-column">
+                                                        <span class="cube-fichas">59</span> ECS
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary d-flex flex-column">
+                                                        <span class="cube-fichas">60</span> ECC
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary d-flex flex-column">
+                                                        <span class="cube-fichas">73</span> PRODUCTO TOTAL
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary d-flex flex-column">
+                                                        <span class="cube-fichas">74</span> U. MEDIDA
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary d-flex flex-column">
+                                                        <span class="cube-fichas">69</span> UCA
+                                                    </label>
+                                                </th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody formArrayName="obrasComplementarias">
+                                            <tr *ngFor="let obra of obrasComplementarias.controls; let i = index"
+                                                [formGroupName]="i">
+                                                <td>
+                                                    <p-dropdown [options]="codigosInstalacionOptions"
+                                                        formControlName="codi_instalacion"
+                                                        optionLabel="name"></p-dropdown>
+                                                </td>
+                                                <td>
+                                                    <p-calendar formControlName="fecha" [readonlyInput]="true"
+                                                        class="w-100"></p-calendar>
+                                                </td>
+                                                <td>
+                                                    <p-dropdown [options]="mepOptions" formControlName="mep"
+                                                        optionLabel="name"></p-dropdown>
+                                                </td>
+                                                <td>
+                                                    <p-dropdown [options]="ecsOptions" formControlName="ecs"
+                                                        optionLabel="name"></p-dropdown>
+                                                </td>
+                                                <td>
+                                                    <p-dropdown [options]="eccOptions" formControlName="ecc"
+                                                        optionLabel="name"></p-dropdown>
+                                                </td>
+                                                <td>
+                                                    <input pInputText type="text" formControlName="prodTotal">
+                                                </td>
+                                                <td>
+                                                    <input pInputText type="text" formControlName="uniMed">
+                                                </td>
+                                                <td>
+                                                    <p-dropdown [options]="ucaOptions" formControlName="uca"
+                                                        optionLabel="name"></p-dropdown>
+                                                </td>
+                                                <td>
+                                                    <button *ngIf="i === obrasComplementarias.length - 1" type="button"
+                                                        class="btn btn-success btn-icon"
+                                                        (click)="aumentarObras()">+</button>
+                                                    <button *ngIf="i < obrasComplementarias.length - 1" type="button"
+                                                        class="btn btn-danger btn-icon"
+                                                        (click)="removeObra(i)">-</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group pt-4">
+                            <h4 class="mb-4"> DOCUMENTOS </h4>
+                            <div class="col-md-12 mb-2">
+                                <div class="table-responsive d-inline">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <label class="color-secondary d-flex flex-column">
+                                                        <span class="cube-fichas">71</span> Tipo doc.
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary d-flex flex-column">
+                                                        <span class="cube-fichas">76</span> N° de doc.
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary d-flex flex-column">
+                                                        <span class="cube-fichas">77</span> Fecha
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary d-flex flex-column">
+                                                        <span class="cube-fichas">78</span> Area autorizada
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary d-flex flex-column">
+                                                        <span class="cube-fichas">79</span> Documento
+                                                    </label>
+                                                </th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody formArrayName="documentos">
+                                            <tr *ngFor="let doc of documentos.controls; let i = index"
+                                                [formGroupName]="i">
+                                                <td>
+                                                    <p-dropdown [options]="tipoDocDocumentos"
+                                                        formControlName="tipoDocumento" optionLabel="name"></p-dropdown>
+                                                </td>
+                                                <td>
+                                                    <input pInputText type="text" formControlName="numDocumento">
+                                                </td>
+                                                <td>
+                                                    <p-calendar formControlName="fecha" [readonlyInput]="true"
+                                                        class="w-100"></p-calendar>
+                                                </td>
+                                                <td>
+                                                    <input pInputText type="text" formControlName="areaAutorizada">
+                                                </td>
+                                                <td>
+                                                    <input pInputText type="text" formControlName="urlDoc">
+                                                </td>
+                                                <td>
+                                                    <button *ngIf="i === documentos.length - 1" type="button"
+                                                        class="btn btn-success btn-icon"
+                                                        (click)="aumentarDocumentos()">+</button>
+                                                    <button *ngIf="i < documentos.length - 1" type="button"
+                                                        class="btn btn-danger btn-icon"
+                                                        (click)="removeDocumentos(i)">-</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <h4 class="mb-5"> INSCRIPCIÓN DEL PREDIO CATASTRAL</h4>
+                            <div class="col-md-3">
+                                <p-floatLabel>
+                                    <p-dropdown id="tipoPartida" [options]="tipoPartidaOptions"
+                                        formControlName="tipoPartida" optionLabel="name" class="w-100"></p-dropdown>
+                                    <label for="tipoPartida">
+                                        <span class="cube-fichas">79</span>TIPO DE PARTIDA REGISTRAL
+                                    </label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-3">
+                                <p-floatLabel>
+                                    <input pInputText type="text" id="numePartida" formControlName="numePartida"
+                                        class=" w-100" />
+                                    <label for="numePartida">
+                                        <span class="cube-fichas">80</span>NUMERO
+                                    </label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-3">
+                                <p-floatLabel>
+                                    <input pInputText type="text" id="fojas" formControlName="fojas" class="" />
+                                    <label for="fojas">
+                                        <span class="cube-fichas">81</span>FOJAS
+                                    </label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-3">
+                                <p-floatLabel>
+                                    <input pInputText type="text" id="asiento" formControlName="asiento" class="" />
+                                    <label for="asiento">
+                                        <span class="cube-fichas">82</span>ASIENTO
+                                    </label>
+                                </p-floatLabel>
+                            </div>
+                        </div>
+                        <div class="row form-group py-4">
+                            <div class="col-md-3">
+                                <p-floatLabel>
+                                    <p-calendar id="fechaInscripcion" formControlName="fechaInscripcion"
+                                        class="w-100"></p-calendar>
+                                    <label for="fechaInscripcion">
+                                        <span class="cube-fichas">83</span>FECHA DE INSCRIPCION
+                                    </label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-3">
+                                <p-floatLabel>
+                                    <p-dropdown id="declaratoriaFabrica" [options]="declaratoriaFabricaOptions"
+                                        formControlName="declaratoriaFabrica" optionLabel="name"
+                                        class="w-100"></p-dropdown>
+                                    <label for="declaratoriaFabrica">
+                                        <span class="cube-fichas">84</span>DECLARATORIA DE FABRICA
+                                    </label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-3">
+                                <p-floatLabel>
+                                    <input pInputText type="text" id="asieFabrica" formControlName="asieFabrica"
+                                        class="" />
+                                    <label for="asieFabrica">
+                                        <span class="cube-fichas">85</span>AS. INSC. DE FABRICA
+                                    </label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-3">
+                                <p-floatLabel>
+                                    <p-calendar id="fechaFabrica" formControlName="fechaFabrica"
+                                        class="w-100"></p-calendar>
+                                    <label for="fechaFabrica">
+                                        <span class="cube-fichas">86</span>FECHA DE INSC. DE FABRICA
+                                    </label>
+                                </p-floatLabel>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <h4 class="mb-4">EVALUACION DEL PREDIO CATASTRAL</h4>
+                            <label class="color-secondary py-2" for="en_colindante">
+                                <span class="cube-fichas">87</span>Área de terreno invadida (M2)
+                            </label>
+                            <div class="col-md-3">
+                                <p-floatLabel>
+                                    <input id="en_colindante" type="text" class="w-100" pInputText
+                                        formControlName="en_colindante" />
+                                    <label for="en_colindante">
+                                        <span class="hidden cube-fichas">87</span> EN LOTE COLINDANTE
+                                    </label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-3">
+                                <p-floatLabel>
+                                    <input id="en_area_publica" type="text" class="w-100" pInputText
+                                        formControlName="en_area_publica" />
+                                    <label for="en_area_publica">
+                                        <span class="hidden cube-fichas">87</span> EN ÁREA PÚBLICA
+                                    </label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-3">
+                                <p-floatLabel>
+                                    <input id="en_jardin_aislamiento" type="text" class="w-100" pInputText
+                                        formControlName="en_jardin_aislamiento" />
+                                    <label for="en_jardin_aislamiento">
+                                        <span class="hidden cube-fichas">87</span> EN JARDÍN DE AISLAMIENTO
+                                    </label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-3">
+                                <p-floatLabel>
+                                    <input id="en_area_intangible" type="text" class="w-100" pInputText
+                                        formControlName="en_area_intangible" />
+                                    <label for="en_area_intangible">
+                                        <span class="hidden cube-fichas">87</span> EN ÁREA INTANGIBLE
+                                    </label>
+                                </p-floatLabel>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <h4 class="py-4"> INFORMACIÓN COMPLEMENTARIA</h4>
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <p-floatLabel>
+                                        <p-dropdown [options]="condicionDeclaranteOptions"
+                                            formControlName="condicionDeclarante" optionLabel="name" class="w-100">
+                                        </p-dropdown>
+                                        <label for="condicionDeclarante">
+                                            <span class="cube-fichas">88</span> CONDICIÓN DE DECLARANTE
+                                        </label>
+                                    </p-floatLabel>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <p-floatLabel>
+                                        <p-dropdown [options]="estadoLlenadoOptions" formControlName="estadoLlenado"
+                                            optionLabel="name" class="w-100">
+                                        </p-dropdown>
+                                        <label for="estadoLlenado">
+                                            <span class="cube-fichas">90</span> ESTADO DE LLENADO DE LA FICHA
+                                        </label>
+                                    </p-floatLabel>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="mb-3">
+                                    <p-floatLabel>
+                                        <input id="nume_habitantes" type="text" class="w-100" pInputText
+                                            autocomplete="off" formControlName="numeHabitantes" />
+                                        <label for="nume_habitantes">
+                                            <span class="cube-fichas">91</span> N° DE HABITANTES
+                                        </label>
+                                    </p-floatLabel>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="mb-3">
+                                    <p-floatLabel>
+                                        <input id="nume_familias" type="text" class="w-100" pInputText
+                                            autocomplete="off" formControlName="numeFamilias" />
+                                        <label for="nume_familias">
+                                            <span class="cube-fichas">92</span> N° DE FAMILIAS
+                                        </label>
+                                    </p-floatLabel>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="mb-3">
+                                    <p-floatLabel>
+                                        <p-dropdown [options]="mantenimientoOptions" formControlName="mantenimiento"
+                                            optionLabel="name" class="w-100">
+                                        </p-dropdown>
+                                        <label for="mantenimiento">
+                                            <span class="cube-fichas">93</span> MANTENIMIENTO
+                                        </label>
+                                    </p-floatLabel>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="color-secondary py-2" for="en_colindante">
+                                <span class="cube-fichas">89</span>Área de Identificación de los litigantes
+                            </label>
+                            <div class="col-md-12 mb-2">
+                                <div class="table-responsive d-inline">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <label class="color-secondary">
+                                                        <span class="hidden cube-fichas">89</span>
+                                                        T. Documento
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary">
+                                                        <span class="hidden cube-fichas">89</span>
+                                                        N° Documento
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary">
+                                                        <span class="hidden cube-fichas">89</span>
+                                                        Codigo del contribuyente
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary">
+                                                        <span class="hidden cube-fichas">89</span>
+                                                        Nombres
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary">
+                                                        <span class="hidden cube-fichas">89</span>
+                                                        Apellido Paterno
+                                                    </label>
+                                                </th>
+                                                <th>
+                                                    <label class="color-secondary">
+                                                        <span class="hidden cube-fichas">89</span>
+                                                        Apellido Materno
+                                                    </label>
+                                                </th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody formArrayName="litigantes">
+                                            <tr *ngFor="let litigante of litigantes.controls; let i = index"
+                                                [formGroupName]="i">
+                                                <td>
+                                                    <p-dropdown [options]="tipoDocLitigantes"
+                                                        formControlName="tipo_doc_litigante"
+                                                        optionLabel="name"></p-dropdown>
+                                                </td>
+                                                <td>
+                                                    <input pInputText type="text" formControlName="nume_doclitigante">
+                                                </td>
+                                                <td>
+                                                    <input pInputText type="text" formControlName="codi_contribuye">
+                                                </td>
+                                                <td>
+                                                    <input pInputText type="text" formControlName="nombreslitigante">
+                                                </td>
+                                                <td>
+                                                    <input pInputText type="text"
+                                                        formControlName="ape_paternolitigante">
+                                                </td>
+                                                <td>
+                                                    <input pInputText type="text"
+                                                        formControlName="ape_maternolitigante">
+                                                </td>
+                                                <td>
+                                                    <button *ngIf="i === litigantes.length - 1" type="button"
+                                                        class="btn btn-success btn-icon"
+                                                        (click)="aumentarLitigantes()">+</button>
+                                                    <button *ngIf="i < litigantes.length - 1" type="button"
+                                                        class="btn btn-danger btn-icon"
+                                                        (click)="removeLitigantes(i)">-</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="color-secondary py-2">
+                                <span class="cube-fichas">89</span>Área de Observación
+                            </label>
+                            <p-floatLabel>
+                                <textarea id="observacion" pInputTextarea formControlName="observacion"></textarea>
+                                <label for="observacion">Observacion</label>
+                            </p-floatLabel>
+                        </div>
+                        <div class="row form-group pt-4">
+                            <div class="col-md-3 mb-3 flex flex-column gap-4">
+                                <p-floatLabel>
+                                    <input id="num_documento_declarante" type="number" class="" pInputText
+                                        autocomplete="off" formControlName="num_documento_declarante" />
+                                    <label for="num_documento_declarante">
+                                        <span class="cube-fichas">94</span> DECLARANTE DNI
+                                    </label>
+                                </p-floatLabel>
+                                <p-floatLabel>
+                                    <input id="nombres_declarante" type="text" class="" pInputText autocomplete="off"
+                                        formControlName="nombres_declarante" />
+                                    <label for="nombres_declarante">NOMBRES</label>
+                                </p-floatLabel>
+                                <p-floatLabel>
+                                    <input id="apellido_paterno_declarante" type="text" class="" pInputText
+                                        autocomplete="off" formControlName="apellido_paterno_declarante" />
+                                    <label for="apellido_paterno_declarante">APELLIDO PATERNO</label>
+                                </p-floatLabel>
+                                <p-floatLabel>
+                                    <input id="apellido_materno_declarante" type="text" class="" pInputText
+                                        autocomplete="off" formControlName="apellido_materno_declarante" />
+                                    <label for="apellido_materno_declarante">APELLIDO MATERNO</label>
+                                </p-floatLabel>
+                                <p-floatLabel>
+                                    <p-calendar formControlName="fecha_declarante" [readonlyInput]="true"
+                                        class="w-100"></p-calendar>
+                                    <label for="fecha_declarante">
+                                        <span class="hidden cube-fichas">39</span> FECHA
+                                    </label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-3 mb-3 flex flex-column gap-4">
+                                <p-floatLabel>
+                                    <p-dropdown [options]="supervisores" formControlName="supervisor"
+                                        optionLabel="nombres"></p-dropdown>
+                                    <label for="supervisor">
+                                        <span class="cube-fichas">95</span> SUPERVISOR
+                                    </label>
+                                </p-floatLabel>
+                                <p-floatLabel>
+                                    <p-calendar formControlName="fecha_supervision" [readonlyInput]="true"
+                                        class="w-100"></p-calendar>
+                                    <label for="fecha_supervision">
+                                        <span class="hidden cube-fichas">39</span> FECHA
+                                    </label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-3 mb-3 flex flex-column gap-4">
+                                <p-floatLabel>
+                                    <p-dropdown [options]="tecnicos" formControlName="tecnico"
+                                        optionLabel="nombres"></p-dropdown>
+                                    <label for="tecnico">
+                                        <span class="cube-fichas">96</span> TÉCNICO CATASTRAL
+                                    </label>
+                                </p-floatLabel>
+                                <p-floatLabel>
+                                    <p-calendar formControlName="fecha_levantamiento" [readonlyInput]="true"
+                                        class="w-100"></p-calendar>
+                                    <label for="fecha_levantamiento">
+                                        <span class="hidden cube-fichas">39</span> FECHA
+                                    </label>
+                                </p-floatLabel>
+                            </div>
+                            <div class="col-md-3 mb-3 flex flex-column gap-4">
+                                <p-floatLabel>
+                                    <p-dropdown [options]="verificadores" formControlName="verificador"
+                                        optionLabel="nombres"></p-dropdown>
+                                    <label for="verificador">
+                                        <span class="cube-fichas">97</span> Vº Bº VERIFICADOR CATASTRAL
+                                    </label>
+                                </p-floatLabel>
+                                <p-floatLabel>
+                                    <input id="nume_registro" type="text" class="" pInputText autocomplete="off"
+                                        maxlength="10" formControlName="nume_registro" />
+                                    <label for="nume_registro">Nº DE REGISTRO</label>
+                                </p-floatLabel>
+                                <p-floatLabel>
+                                    <p-calendar formControlName="fecha_verificacion" [readonlyInput]="true"
+                                        class="w-100"></p-calendar>
+                                    <label for="fecha_verificacion">
+                                        <span class="hidden cube-fichas">39</span> FECHA
+                                    </label>
+                                </p-floatLabel>
+                            </div>
+                        </div>
+                        <div class="row form-group pt-4 d-flex justify-content-end">
+                            <div class="col-md-3 mb-3 flex flex-column gap-4">
+                                <p-button type="submit" pButton label="Submit" />
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -12,92 +12,108 @@
             <li class="nav-item nav-category">Main</li>
             <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
                 <a routerLink="/dashboard" class="nav-link">
-                    <i class="link-icon" data-feather="box"></i>
+                    <mat-icon class="link-icon icons-size" inline>view_in_ar</mat-icon>
                     <span class="link-title">Dashboard</span>
                 </a>
             </li>
             <li class="nav-item nav-category">Menu</li>
             <li class="nav-item" routerLinkActive="active">
                 <a routerLink="/user" class="nav-link">
-                    <i class="link-icon mdi mdi-account-plus"></i>
+                    <mat-icon class="link-icon icons-size" inline>group</mat-icon>
                     <span class="link-title">Usuarios</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a routerLink="/roles" class="nav-link">
-                    <i class="link-icon mdi mdi-account-key"></i>
+                    <mat-icon class="link-icon icons-size" inline>key</mat-icon>
                     <span class="link-title">Roles</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="collapse" routerLink="/mantenimiento" role="button"
-                    aria-expanded="false" aria-controls="mantenimiento">
-                    <i class="link-icon" data-feather="settings"></i>
+                <a class="nav-link collapsed"
+                    [ngClass]="{'collapsed': !submenuStates['mantenimiento'], '': submenuStates['mantenimiento']}"
+                    (click)="toggleSubmenu('mantenimiento')" role="button" aria-expanded="false"
+                    aria-controls="mantenimiento">
+                    <mat-icon class="link-icon icons-size" inline>settings</mat-icon>
                     <span class="link-title">Mantenimiento</span>
-                    <i class="link-arrow" data-feather="chevron-down"></i>
+                    <mat-icon class="link-arrow" inline>expand_more</mat-icon>
                 </a>
-                <div class="collapse" id="mantenimiento">
+                <div class="collapse"
+                    [ngClass]="{'collapse': !submenuStates['mantenimiento'], ' show': submenuStates['mantenimiento']}"
+                    id="mantenimiento">
                     <ul class="nav sub-menu">
                         <li class="nav-item">
                             <a routerLink="/mantenimiento" class="nav-link">Notaria</a>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="/mantenimiento" class=" nav-link">Tecnico</a>
+                            <a routerLink="/mantenimiento" class="nav-link">Tecnico</a>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="/mantenimiento" class=" nav-link">Supervisor</a>
+                            <a routerLink="/mantenimiento" class="nav-link">Supervisor</a>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="/mantenimiento" class=" nav-link">Verificador</a>
+                            <a routerLink="/mantenimiento" class="nav-link">Verificador</a>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="/mantenimiento" class=" nav-link">Sectores</a>
+                            <a routerLink="/mantenimiento" class="nav-link">Sectores</a>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="/mantenimiento" class=" nav-link">Manzanas</a>
+                            <a routerLink="/mantenimiento" class="nav-link">Manzanas</a>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="/mantenimiento" class=" nav-link">Habilitacion Urbana</a>
+                            <a routerLink="/mantenimiento" class="nav-link">Habilitacion Urbana</a>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="/mantenimiento" class=" nav-link">Vias</a>
+                            <a routerLink="/mantenimiento" class="nav-link">Vias</a>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="/mantenimiento" class=" nav-link">Codigos de Tabla</a>
+                            <a routerLink="/mantenimiento" class="nav-link">Codigos de Tabla</a>
                         </li>
                     </ul>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="collapse" href="#ficha" role="button" aria-expanded="false"
-                    aria-controls="ficha">
-                    <i class="link-icon mdi mdi-clipboard-text"></i>
-                    <span class="link-title">Fichas</span>
-                    <i class="link-arrow" data-feather="chevron-down"></i>
+                <a class="nav-link collapsed"
+                    [ngClass]="{'collapsed': !submenuStates['fichas'], '': submenuStates['fichas']}"
+                    (click)="toggleSubmenu('fichas')" role="button" aria-expanded="false" aria-controls="fichas">
+                    <mat-icon class="link-icon icons-size" inline>settings</mat-icon>
+                    <span class="link-title">fichas</span>
+                    <mat-icon class="link-arrow" inline>expand_more</mat-icon>
                 </a>
-                <div class="collapse" id="ficha">
+                <div class="collapse"
+                    [ngClass]="{'collapse': !submenuStates['fichas'], ' show': submenuStates['fichas']}" id="fichas">
                     <ul class="nav sub-menu">
                         <li class="nav-item">
-                            <a href="/ficha/createindividual" class="nav-link">Crear Ficha Individual</a>
+                            <a routerLink="/fichas" class="nav-link">Notaria</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/ficha/indexcotitular" class="nav-link">Crear Ficha Cotitularidad</a>
+                            <a routerLink="/fichas" class="nav-link">Tecnico</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/ficha/indexeconomica" class="nav-link">Crear Ficha Economica</a>
+                            <a routerLink="/fichas" class="nav-link">Supervisor</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/ficha/createbiencomun" class="nav-link">Crear Ficha Bienes Comunes</a>
+                            <a routerLink="/fichas" class="nav-link">Verificador</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/ficha/indexbiencultural" class="nav-link">Crear Ficha Bien Cultural</a>
+                            <a routerLink="/fichas" class="nav-link">Sectores</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/ficha/createrural" class="nav-link">Crear Ficha Rural</a>
+                            <a routerLink="/fichas" class="nav-link">Manzanas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a routerLink="/fichas" class="nav-link">Habilitacion Urbana</a>
+                        </li>
+                        <li class="nav-item">
+                            <a routerLink="/fichas" class="nav-link">Vias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a routerLink="/fichas" class="nav-link">Codigos de Tabla</a>
                         </li>
                     </ul>
                 </div>
             </li>
+
             <li class="nav-item">
                 <a href="/imagenes/ver" class="nav-link">
                     <i class="link-icon mdi mdi-file-multiple"></i>

@@ -281,3 +281,9 @@
         z-index: 980;
     }
 }
+
+.icons-size {
+    height: 20px !important;
+    width: 20px !important;
+    font-size: 20px;
+}

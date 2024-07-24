@@ -5,13 +5,15 @@ import { CardModule } from 'primeng/card';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HeaderComponent } from './layout/header/header.component';
+import { MatIconModule } from '@angular/material/icon';
+
 
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ButtonModule, CardModule, SidebarComponent, FooterComponent, HeaderComponent
+  imports: [RouterOutlet, ButtonModule, CardModule, SidebarComponent, FooterComponent, HeaderComponent, MatIconModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

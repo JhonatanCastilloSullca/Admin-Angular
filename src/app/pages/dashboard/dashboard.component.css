@@ -1,0 +1,42 @@
+.bg-addon-input {
+    background-color: aquamarine;
+}
+
+.input-group-wrapper {
+    position: relative;
+}
+
+.input-group-wrapper .p-inputtext {
+    width: calc(100% - 40px);
+    /* Ajusta este valor según el ancho de tu addon */
+}
+
+.input-group-wrapper label {
+    position: absolute;
+    left: 50px;
+    /* Ajusta este valor según el ancho de tu addon */
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.input-group-wrapper .p-inputtext:focus+label,
+.input-group-wrapper .p-inputtext:not(:placeholder-shown)+label {
+    top: -0.75em;
+    left: 50px;
+    /* Ajusta este valor según el ancho de tu addon */
+    font-size: 0.75em;
+    color: #007ad9;
+}
+
+.p-inputGroup {
+    position: relative;
+    width: 100%;
+}
+
+.p-inputGroupAddon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
